@@ -54,7 +54,8 @@ def main():
     for app, repo in REPOS.items():
         try:
             data["apps"][app] = releases(repo)
-            print(f"{app}: {len(data['apps'][app])} versiones")
+            tags = ", ".join(r["tag_name"] for r in data["apps"][app][:8])
+            print(f"{app}: {len(data['apps'][app])} versiones (las últimas: {tags})")
         except Exception as e:  # una app que falle no tumba la otra
             print(f"{app}: no se han podido leer las releases ({e})", file=sys.stderr)
     if not data["apps"]:
