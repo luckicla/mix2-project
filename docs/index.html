@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mix² · MixUp + Mix4Up · tu música y tus vídeos</title>
+<meta name="description" content="Mix² junta a MixUp (reproductor de música con modo DJ) y Mix4Up (YouTube sin Shorts y tus vídeos). Descargas para Windows y Android, novedades y todas las versiones. Gratis y de código abierto.">
+<meta property="og:title" content="Mix² · MixUp + Mix4Up">
+<meta property="og:description" content="Dos apps, una familia: tu música mezclada como en una sesión y tu YouTube sin un solo Short. Windows y Android, gratis.">
+<meta property="og:image" content="https://luckicla.github.io/mix2-project/img/mixup.png">
+<meta name="theme-color" content="#0a0a0d">
+<link rel="icon" href="img/mix2.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<div class="bgfx" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="top">
+  <a class="brand" href="#top" aria-label="Mix², inicio"><img src="img/mix2.svg" alt="" width="36" height="36"><b>Mix<sup>2</sup></b></a>
+  <nav aria-label="Secciones">
+    <a href="#apps">Las apps</a>
+    <a href="#comparar">Comparar</a>
+    <a href="#descargas">Descargas</a>
+    <a href="#novedades">Novedades</a>
+    <a href="#seguro">¿Es seguro?</a>
+  </nav>
+  <a class="btn sm acid" href="#descargas">Descargar</a>
+  <button class="burger" type="button" aria-label="Menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+</header>
+<div class="menu" id="menu" hidden>
+  <a href="#apps">Las apps</a><a href="#mixup">MixUp</a><a href="#mix4up">Mix4Up</a><a href="#comparar">Comparar</a><a href="#descargas">Descargas</a><a href="#novedades">Novedades</a><a href="#versiones">Versiones</a><a href="#seguro">¿Es seguro?</a><a href="#acerca">Acerca de</a>
+</div>
+
+<!-- ============ PORTADA ============ -->
+<section class="hero">
+  <div class="hero-tx">
+    <p class="kicker"><span class="dot"></span> Dos apps · una familia · gratis</p>
+    <h1 class="title" aria-label="Mix al cuadrado">
+      <span class="ransom" aria-hidden="true"><i>M</i><i>I</i><i>X</i></span><span class="sq" aria-hidden="true">2</span>
+    </h1>
+    <p class="lead"><b class="hl-acid">MixUp</b> pone tu música a sonar como en una sesión de DJ. <b class="hl-pink">Mix4Up</b> te da tu YouTube sin un solo Short y todos tus vídeos. Las dos para <b>Windows</b> y <b>Android</b>, sin anuncios y se actualizan solas.</p>
+    <div class="hero-dl">
+      <a class="btn big acid" href="#mixup">
+        <img src="img/mixup.png" alt="" width="34" height="34">
+        <span>MixUp<small>Música · <em data-ver="mixup">última versión</em></small></span>
+      </a>
+      <a class="btn big pinkpill" href="#mix4up">
+        <img src="img/mix4up.svg" alt="" width="34" height="34">
+        <span>Mix4Up<small>Vídeos · <em data-ver="mix4up">última versión</em></small></span>
+      </a>
+    </div>
+    <p class="mono-note">Windows 10 y 11 · Android 7 o más nuevo · código abierto</p>
+  </div>
+
+  <div class="collage" aria-hidden="true">
+    <figure class="zshot"><span class="tape t1"></span><span class="tape t2"></span><img src="img/capturas/pc-playlist.jpg" alt="" width="2000" height="1250"><figcaption>MixUp · PC</figcaption></figure>
+
+    <div class="mwin">
+      <div class="mwin-bar"><i class="lg"></i><div class="srch">Buscar en YouTube</div><i class="av"></i></div>
+      <div class="mwin-chips"><span class="on">Todo</span><span>Música</span><span>Ciencia</span><span>Directos</span><span>Cocina</span></div>
+      <div class="mwin-grid">
+        <div class="v"><div class="th g1" data-d="12:41"></div><p>El puente más largo del mundo</p><small>Ingeniería Hoy · 1,2 M</small></div>
+        <div class="v"><div class="th g2" data-d="24:07"></div><p>Cocido de la abuela, paso a paso</p><small>Cocina Fácil · 340 mil</small></div>
+        <div class="v"><div class="th g3" data-d="8:15"></div><p>Por qué el cielo es azul</p><small>Ciencia en 10 · 88 mil</small></div>
+        <div class="v"><div class="th g4" data-d="1:02:33"></div><p>Sesión en directo, 2026</p><small>Sala Sur · 51 mil</small></div>
+      </div>
+      <span class="noshorts">0 Shorts</span>
+    </div>
+
+    <figure class="zphone"><img src="img/capturas/android-reproductor.jpg" alt="" width="900" height="1999"></figure>
+    <span class="sticker">×</span>
+    <span class="stamp">Hecho por<br>luckicla</span>
+  </div>
+</section>
+
+<!-- cinta de versiones en directo -->
+<div class="ticker" aria-label="Últimas versiones">
+  <div class="ticker-in" id="ticker">
+    <span>MixUp <b data-ver="mixup">—</b></span><span>Mix4Up <b data-ver="mix4up">—</b></span><span>Windows + Android</span><span>Se actualizan solas</span><span>Sin anuncios</span><span>Código abierto</span>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ LAS DOS APPS ============ -->
+<section id="apps" class="sec">
+  <h2 class="label">Las dos apps</h2>
+  <p class="intro">Dos proyectos hermanos, hechos por la misma persona, con la misma idea: lo tuyo, sin cosas que molesten. Comparten colores, se instalan igual, se sincronizan móvil ↔ PC por la WiFi y se actualizan solas cuando sale versión nueva.</p>
+
+  <div class="duo">
+    <a class="pick zine" href="#mixup">
+      <img src="img/mixup.png" alt="" width="88" height="88">
+      <span class="pick-tag">Música</span>
+      <h3>MixUp</h3>
+      <p>Tu reproductor de música con <b>modo DJ</b>, YouTube y Spotify, ecualizador y pinta de fanzine que se cambia entera.</p>
+      <span class="pick-go">Ver MixUp ↓</span>
+    </a>
+    <span class="plus" aria-hidden="true">+</span>
+    <a class="pick sleek" href="#mix4up">
+      <img src="img/mix4up.svg" alt="" width="88" height="88">
+      <span class="pick-tag">Vídeos</span>
+      <h3>Mix4Up</h3>
+      <p>Tus recomendaciones de YouTube <b>sin un solo Short</b> y sin anuncios, y todos tus vídeos del PC y del móvil.</p>
+      <span class="pick-go">Ver Mix4Up ↓</span>
+    </a>
+  </div>
+
+  <div class="stats" id="stats">
+    <div class="stat"><b data-stat="versions">—</b><span>versiones publicadas</span></div>
+    <div class="stat"><b data-stat="downloads">—</b><span>descargas en GitHub</span></div>
+    <div class="stat"><b>2</b><span>sistemas: Windows y Android</span></div>
+    <div class="stat"><b data-stat="last">—</b><span>última actualización</span></div>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<!-- ============ MIXUP ============ -->
+<section id="mixup" class="app app-mixup">
+  <div class="app-head">
+    <img class="app-logo" src="img/mixup.png" alt="Logo de MixUp" width="120" height="120">
+    <div>
+      <p class="kicker">App de música · antes ZenTor</p>
+      <h2 class="ransom-h" aria-label="MixUp"><i>M</i><i>I</i><i>X</i><i>U</i><i>P</i></h2>
+      <p class="app-lead">Tu música, mezclada como en una sesión. Empezó como un reproductor para escuchar música desde un pendrive sin instalar nada y ha acabado siendo un reproductor completo para PC y móvil.</p>
+    </div>
+  </div>
+
+  <div class="feat">
+    <div class="fc"><span class="ic">◉</span><h3>Modo DJ</h3><p>Analiza tempo, tono, energía y estribillos, y mete la siguiente canción en el mejor momento. Estilos Suave, Fiesta y Chill.</p></div>
+    <div class="fc"><span class="ic">▶</span><h3>YouTube y Spotify</h3><p>Pega un enlace o busca por nombre, escúchala y descárgala para tenerla sin internet. De Spotify, si ya la tienes, suena la tuya.</p></div>
+    <div class="fc"><span class="ic">≋</span><h3>Suena mejor</h3><p>Ecualizador, refuerzo de graves, «Mejorar sonido» para auriculares baratos, igualar volumen y fundido cruzado.</p></div>
+    <div class="fc"><span class="ic">♫</span><h3>Toda tu biblioteca</h3><p>mp3, m4a, flac, ogg, opus y wav. Portadas, letras, artistas con foto y biografía, playlists y repetidas fuera.</p></div>
+    <div class="fc"><span class="ic">⇄</span><h3>PC y móvil juntos</h3><p>Escanea un código y se sincronizan playlists, Me gusta y música. Controla desde uno lo que suena en el otro.</p></div>
+    <div class="fc"><span class="ic">✂</span><h3>A tu gusto</h3><p>Temas, colores, fondo, letras, iconos y efectos. En español, inglés y catalán. Con estadísticas y tu propio Wrapped.</p></div>
+  </div>
+
+  <div class="gallery">
+    <figure class="g-wide"><span class="tape t1"></span><img src="img/capturas/pc-albumes.jpg" alt="MixUp en Windows: tus álbumes" loading="lazy" width="2000" height="1250"><figcaption>Tus álbumes</figcaption></figure>
+    <figure class="g-wide"><span class="tape t2"></span><img src="img/capturas/pc-ajustes.jpg" alt="MixUp: ajustes de aspecto" loading="lazy" width="2000" height="1250"><figcaption>Se cambia casi todo</figcaption></figure>
+    <figure class="g-phone"><img src="img/capturas/android-playlist.jpg" alt="MixUp en Android: una playlist" loading="lazy" width="900" height="1999"><figcaption>En el móvil</figcaption></figure>
+  </div>
+  <p class="fine">Las canciones, artistas y portadas de las capturas son inventados.</p>
+
+  <div class="getbar zinebar">
+    <div class="getbar-tx">
+      <b>Descargar MixUp</b>
+      <span class="mono" data-verline="mixup">Cargando la última versión…</span>
+    </div>
+    <div class="getbar-btns">
+      <a class="btn acid" data-dl="mixup:inst" href="https://github.com/luckicla/zentor/releases/download/pc-latest/MixUp-Instalador.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-win"/></svg>Windows<small data-size="mixup:inst"></small></a>
+      <a class="btn pink" data-dl="mixup:apk" href="https://github.com/luckicla/zentor/releases/download/android-latest/MixUp.apk"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-android"/></svg>Android<small data-size="mixup:apk"></small></a>
+      <a class="btn ghost" data-dl="mixup:port" href="https://github.com/luckicla/zentor/releases/download/pc-latest/MixUp-Portable.exe">Portable (USB)<small data-size="mixup:port"></small></a>
+    </div>
+    <div class="getbar-links">
+      <a href="https://luckicla.github.io/zentor/">Web de MixUp ↗</a>
+      <a href="https://github.com/luckicla/zentor">Código en GitHub ↗</a>
+      <a href="https://github.com/luckicla/zentor/releases">Releases ↗</a>
+    </div>
+  </div>
+</section>
+
+<div class="hazard rev" aria-hidden="true"></div>
+
+<!-- ============ MIX4UP ============ -->
+<section id="mix4up" class="app app-mix4up">
+  <div class="app-head">
+    <img class="app-logo round" src="img/mix4up.svg" alt="Logo de Mix4Up" width="120" height="120">
+    <div>
+      <p class="kicker">App de vídeos · hermana de MixUp</p>
+      <h2 class="sleek-h">Tu YouTube.<br><em>Sin un solo Short.</em></h2>
+      <p class="app-lead">Mix4Up te enseña lo mismo que te recomienda YouTube —tu inicio, tus suscripciones, tu historial— pero sin Shorts y sin anuncios. Y además, todos tus vídeos del PC y del móvil.</p>
+    </div>
+  </div>
+
+  <div class="feat sleekfeat">
+    <div class="fc"><span class="ic">⌂</span><h3>Tus recomendaciones</h3><p>Conecta tu cuenta y el inicio es el tuyo, con scroll infinito. La sesión se guarda solo en tu aparato.</p></div>
+    <div class="fc"><span class="ic no">0</span><h3>Cero Shorts</h3><p>Ni en el inicio, ni en búsquedas, ni en canales, ni en relacionados, ni en suscripciones. Ni pestaña de Shorts.</p></div>
+    <div class="fc"><span class="ic">ϟ</span><h3>Rapidísimo</h3><p>Al abrir un vídeo se baja entero en segundo plano con varias conexiones: saltar y cambiar de calidad es al momento.</p></div>
+    <div class="fc"><span class="ic">▣</span><h3>Tus vídeos</h3><p>MP4, MKV, WebM, MOV, AVI… con miniaturas, duración y «seguir donde lo dejaste».</p></div>
+    <div class="fc"><span class="ic">⤓</span><h3>Descargar</h3><p>Cualquier vídeo de YouTube en la calidad que elijas, o solo el sonido.</p></div>
+    <div class="fc"><span class="ic">◐</span><h3>Reproductor completo</h3><p>Gestos, velocidad, subtítulos, imagen dentro de imagen, tramo A-B, temporizador para dormir y en segundo plano.</p></div>
+  </div>
+
+  <div class="m4-show" aria-hidden="true">
+    <div class="m4-desk">
+      <div class="m4-side"><i class="lg"></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
+      <div class="m4-main">
+        <div class="mwin-bar"><div class="srch">Buscar en YouTube</div><i class="av"></i></div>
+        <div class="mwin-chips"><span class="on">Todo</span><span>Suscripciones</span><span>Música</span><span>Ver más tarde</span><span>Me gusta</span></div>
+        <div class="m4-grid">
+          <div class="v"><div class="th g1" data-d="12:41"></div><p>El puente más largo del mundo</p><small>Ingeniería Hoy</small></div>
+          <div class="v"><div class="th g2" data-d="24:07"></div><p>Cocido de la abuela</p><small>Cocina Fácil</small></div>
+          <div class="v"><div class="th g3" data-d="8:15"></div><p>Por qué el cielo es azul</p><small>Ciencia en 10</small></div>
+          <div class="v"><div class="th g4" data-d="1:02:33"></div><p>Sesión en directo</p><small>Sala Sur</small></div>
+          <div class="v"><div class="th g5" data-d="15:58"></div><p>Ruta en bici por los Pirineos</p><small>Pedales</small></div>
+          <div class="v"><div class="th g6" data-d="6:20"></div><p>Cómo funciona un motor</p><small>Taller 3D</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="m4-phone">
+      <div class="m4-video g1"><span class="m4-play"></span></div>
+      <div class="m4-bar"><span style="width:38%"></span></div>
+      <p>El puente más largo del mundo</p>
+      <small>Ingeniería Hoy · 1,2 M visualizaciones</small>
+      <div class="m4-ctrl"><i>⏮</i><i class="big">❚❚</i><i>⏭</i></div>
+      <div class="m4-rel"><div class="th g2"></div><div class="th g3"></div></div>
+    </div>
+  </div>
+  <p class="fine">Recreación de la interfaz: los vídeos y canales son inventados.</p>
+
+  <div class="getbar sleekbar">
+    <div class="getbar-tx">
+      <b>Descargar Mix4Up</b>
+      <span class="mono" data-verline="mix4up">Cargando la última versión…</span>
+    </div>
+    <div class="getbar-btns">
+      <a class="btn pinkpill" data-dl="mix4up:inst" href="https://github.com/luckicla/mix4up/releases/download/mix4up-pc-latest/Mix4Up-Instalador.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-win"/></svg>Windows<small data-size="mix4up:inst"></small></a>
+      <a class="btn acidpill" data-dl="mix4up:apk" href="https://github.com/luckicla/mix4up/releases/download/mix4up-android-latest/Mix4Up.apk"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-android"/></svg>Android<small data-size="mix4up:apk"></small></a>
+      <a class="btn ghostpill" data-dl="mix4up:port" href="https://github.com/luckicla/mix4up/releases/download/mix4up-pc-latest/Mix4Up-Portable.exe">Portable (USB)<small data-size="mix4up:port"></small></a>
+    </div>
+    <div class="getbar-links">
+      <a href="https://luckicla.github.io/mix4up/">Web de Mix4Up ↗</a>
+      <a href="https://github.com/luckicla/mix4up">Código en GitHub ↗</a>
+      <a href="https://github.com/luckicla/mix4up/releases">Releases ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARAR ============ -->
+<section id="comparar" class="sec">
+  <h2 class="label">¿Cuál me bajo?</h2>
+  <p class="intro">Las dos, si quieres: no se pisan. Una es para escuchar, la otra para ver.</p>
+  <div class="tablewrap">
+    <table class="cmp">
+      <thead><tr><th></th><th class="c-mixup"><img src="img/mixup.png" alt="" width="28" height="28">MixUp</th><th class="c-mix4up"><img src="img/mix4up.svg" alt="" width="28" height="28">Mix4Up</th></tr></thead>
+      <tbody>
+        <tr><td>Para qué</td><td>Escuchar tu música</td><td>Ver YouTube y tus vídeos</td></tr>
+        <tr><td>Lo más suyo</td><td>Modo DJ que mezcla solo</td><td>Tu inicio de YouTube sin Shorts</td></tr>
+        <tr><td>YouTube</td><td>Buscar, escuchar y bajar canciones</td><td>Tu cuenta: inicio, suscripciones, listas</td></tr>
+        <tr><td>Archivos tuyos</td><td>mp3, m4a, flac, ogg, opus, wav</td><td>MP4, MKV, WebM, MOV, AVI…</td></tr>
+        <tr><td>Windows (instalador y portable)</td><td class="y">Sí</td><td class="y">Sí</td></tr>
+        <tr><td>Android (APK)</td><td class="y">Sí</td><td class="y">Sí</td></tr>
+        <tr><td>Móvil ↔ PC por WiFi</td><td class="y">Sí</td><td class="y">Sí</td></tr>
+        <tr><td>Se actualiza sola</td><td class="y">Sí</td><td class="y">Sí</td></tr>
+        <tr><td>Anuncios o cuentas propias</td><td class="n">No</td><td class="n">No</td></tr>
+        <tr><td>Código abierto</td><td class="y">Sí</td><td class="y">Sí</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ DESCARGAS ============ -->
+<section id="descargas" class="sec">
+  <h2 class="label">Descargas</h2>
+  <p class="intro">Elige la app y tu aparato. Los botones bajan siempre la versión más nueva; para el móvil, escanea el QR con la cámara.</p>
+
+  <div class="tabs" role="tablist" aria-label="Elegir app">
+    <button role="tab" id="tab-mixup" aria-controls="pane-mixup" aria-selected="true" data-tab="mixup"><img src="img/mixup.png" alt="" width="24" height="24">MixUp</button>
+    <button role="tab" id="tab-mix4up" aria-controls="pane-mix4up" aria-selected="false" data-tab="mix4up" tabindex="-1"><img src="img/mix4up.svg" alt="" width="24" height="24">Mix4Up</button>
+  </div>
+
+  <div class="pane" id="pane-mixup" role="tabpanel" aria-labelledby="tab-mixup" data-app="mixup">
+    <div class="dlcards">
+      <a class="dlc" data-dl="mixup:inst" href="https://github.com/luckicla/zentor/releases/download/pc-latest/MixUp-Instalador.exe">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-win"/></svg>
+        <b>Windows · instalador</b><span>Se instala como una app más (menú Inicio y escritorio) y se actualiza sola.</span>
+        <em class="mono">MixUp-Instalador.exe <small data-size="mixup:inst"></small></em>
+      </a>
+      <a class="dlc" data-dl="mixup:port" href="https://github.com/luckicla/zentor/releases/download/pc-latest/MixUp-Portable.exe">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-usb"/></svg>
+        <b>Windows · portable</b><span>Sin instalar. En un USB, la música y los ajustes van en el propio USB.</span>
+        <em class="mono">MixUp-Portable.exe <small data-size="mixup:port"></small></em>
+      </a>
+      <div class="dlc qrc">
+        <div class="qr" id="qr-mixup"></div>
+        <b>Android</b><span>Escanéalo o <a data-dl="mixup:apk" href="https://github.com/luckicla/zentor/releases/download/android-latest/MixUp.apk">baja el APK</a>. Android 7 o más nuevo.</span>
+        <em class="mono">MixUp.apk <small data-size="mixup:apk"></small></em>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><b>Abre el instalador</b>. Si sale «Windows protegió su PC», pulsa <i>Más información › Ejecutar de todas formas</i>.</li>
+      <li><b>Tu música aparece sola</b>: lee tu carpeta Música. Para añadir más, arrastra canciones a la ventana.</li>
+      <li><b>Dale al play</b> y, si te apetece, al disco de arriba: el modo DJ mezcla las siguientes él solo.</li>
+    </ol>
+  </div>
+
+  <div class="pane" id="pane-mix4up" role="tabpanel" aria-labelledby="tab-mix4up" data-app="mix4up" hidden>
+    <div class="dlcards">
+      <a class="dlc" data-dl="mix4up:inst" href="https://github.com/luckicla/mix4up/releases/download/mix4up-pc-latest/Mix4Up-Instalador.exe">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-win"/></svg>
+        <b>Windows · instalador</b><span>Se instala y se actualiza sola. Los datos van en tu usuario.</span>
+        <em class="mono">Mix4Up-Instalador.exe <small data-size="mix4up:inst"></small></em>
+      </a>
+      <a class="dlc" data-dl="mix4up:port" href="https://github.com/luckicla/mix4up/releases/download/mix4up-pc-latest/Mix4Up-Portable.exe">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-usb"/></svg>
+        <b>Windows · portable</b><span>Sin instalar. Los datos van junto al .exe, para llevarlo en un USB.</span>
+        <em class="mono">Mix4Up-Portable.exe <small data-size="mix4up:port"></small></em>
+      </a>
+      <div class="dlc qrc">
+        <div class="qr" id="qr-mix4up"></div>
+        <b>Android</b><span>Escanéalo o <a data-dl="mix4up:apk" href="https://github.com/luckicla/mix4up/releases/download/mix4up-android-latest/Mix4Up.apk">baja el APK</a>. Se actualiza sola.</span>
+        <em class="mono">Mix4Up.apk <small data-size="mix4up:apk"></small></em>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><b>Descárgalo</b> e instálalo: en el PC, el instalador; en el móvil, el APK.</li>
+      <li><b>Conecta tu cuenta de YouTube</b> con el botón «Conectar con YouTube». La sesión se queda solo en tu aparato.</li>
+      <li><b>Listo</b>: tu inicio, sin Shorts. Si quieres, junta el móvil con el PC en Ajustes escaneando un QR.</li>
+    </ol>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<!-- ============ NOVEDADES ============ -->
+<section id="novedades" class="sec">
+  <h2 class="label">Novedades</h2>
+  <p class="intro">Salen solas de GitHub: en cuanto se publica una versión de cualquiera de las dos, aparece aquí.</p>
+  <div class="chips" role="group" aria-label="Filtrar novedades">
+    <button class="chip on" data-f="all" aria-pressed="true">Todas</button>
+    <button class="chip" data-f="mixup" aria-pressed="false">MixUp</button>
+    <button class="chip" data-f="mix4up" aria-pressed="false">Mix4Up</button>
+  </div>
+  <div class="timeline" id="log"><p class="fine">Cargando versiones…</p></div>
+  <div class="center"><button class="btn ghost sm" id="more" hidden>Ver más versiones</button></div>
+</section>
+
+<!-- ============ TODAS LAS VERSIONES ============ -->
+<section id="versiones" class="sec">
+  <h2 class="label">Todas las versiones</h2>
+  <p class="intro">Cualquier versión anterior, por si la necesitas. Tus datos se conservan al cambiar de versión.</p>
+  <div class="tabs small" role="tablist" aria-label="Versiones de">
+    <button role="tab" id="vtab-mixup" aria-controls="vpane-mixup" aria-selected="true" data-vtab="mixup"><img src="img/mixup.png" alt="" width="20" height="20">MixUp</button>
+    <button role="tab" id="vtab-mix4up" aria-controls="vpane-mix4up" aria-selected="false" data-vtab="mix4up" tabindex="-1"><img src="img/mix4up.svg" alt="" width="20" height="20">Mix4Up</button>
+  </div>
+  <div class="tablewrap" id="vpane-mixup" role="tabpanel" aria-labelledby="vtab-mixup">
+    <table class="vers"><thead><tr><th>Versión</th><th>Fecha</th><th>Instalador</th><th>Portable</th><th>Android</th></tr></thead>
+    <tbody id="vers-mixup"><tr><td colspan="5" class="fine">Cargando…</td></tr></tbody></table>
+  </div>
+  <div class="tablewrap" id="vpane-mix4up" role="tabpanel" aria-labelledby="vtab-mix4up" hidden>
+    <table class="vers"><thead><tr><th>Versión</th><th>Fecha</th><th>Instalador</th><th>Portable</th><th>Android</th></tr></thead>
+    <tbody id="vers-mix4up"><tr><td colspan="5" class="fine">Cargando…</td></tr></tbody></table>
+  </div>
+</section>
+
+<!-- ============ ¿ES SEGURO? ============ -->
+<section id="seguro" class="sec">
+  <h2 class="label">¿Es seguro? Sí</h2>
+  <div class="safe">
+    <div class="sc">
+      <h3>¿Por qué avisa Windows o Android?</h3>
+      <p>Porque las apps no están firmadas con un certificado de pago (cuesta cientos de euros al año) ni vienen de una tienda oficial. No es por lo que hacen.</p>
+      <p><b>Windows</b>: <i>Más información › Ejecutar de todas formas</i>.<br><b>Android</b>: <i>Más detalles › Instalar de todas formas</i>.</p>
+    </div>
+    <div class="sc">
+      <h3>Todo a la vista</h3>
+      <p>El código de las dos es abierto y los instaladores los compila <b>GitHub Actions</b> a partir de él, no un ordenador particular. Mix4Up, además, pasa pruebas automáticas en Windows y Android antes de publicarse.</p>
+    </div>
+    <div class="sc">
+      <h3>Tus datos, contigo</h3>
+      <p>Sin cuentas propias, sin anuncios y sin servidores que guarden lo tuyo. La sincronización móvil ↔ PC va por tu WiFi. Tu sesión de YouTube nunca sale de tu aparato.</p>
+      <p class="fine">¿Quieres comprobarlo? Sube el archivo a <a href="https://www.virustotal.com">VirusTotal</a>, que lo pasa por más de 70 antivirus.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACERCA DE ============ -->
+<section id="acerca" class="sec">
+  <h2 class="label">Acerca de</h2>
+  <div class="about">
+    <div class="about-logos"><img src="img/mixup.png" alt="" width="84" height="84"><img src="img/mix4up.svg" alt="" width="84" height="84"></div>
+    <div>
+      <p>¡Buenas! Soy <b>luckicla</b> y hago las dos apps. MixUp empezó como ZenTor, un reproductor para escuchar mi música desde un pendrive, y Mix4Up nació después como su hermana para los vídeos. Esta web, Mix², las junta en un solo sitio.</p>
+      <p>MixUp existe sobre todo gracias a <b>Kilphys</b>, la persona para la que se hizo. Gracias por todo.</p>
+      <p>Las dos son gratis y de código abierto para uso no comercial (licencia PolyForm Noncommercial 1.0.0). Si algo falla o se te ocurre una idea, dímelo en GitHub: <a href="https://github.com/luckicla/zentor/issues">MixUp</a> · <a href="https://github.com/luckicla/mix4up/issues">Mix4Up</a>.</p>
+      <p class="fine">Parte de los proyectos se ha hecho con ayuda de IA (Claude, de Anthropic).</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-brand"><img src="img/mix2.svg" alt="" width="40" height="40"><b>Mix<sup>2</sup></b><span>MixUp + Mix4Up</span></div>
+  <nav aria-label="Enlaces">
+    <a href="https://luckicla.github.io/zentor/">Web de MixUp</a>
+    <a href="https://luckicla.github.io/mix4up/">Web de Mix4Up</a>
+    <a href="https://github.com/luckicla/mix2-project">Código de esta web</a>
+  </nav>
+  <small>© 2026 luckicla · <span id="updated"></span></small>
+</footer>
+
+<!-- iconos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-win" viewBox="0 0 24 24"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.4z" fill="currentColor"/></symbol>
+  <symbol id="i-android" viewBox="0 0 24 24"><path d="M7 9h10v8a1 1 0 0 1-1 1h-1v3h-2v-3h-2v3H9v-3H8a1 1 0 0 1-1-1zM4 9h2v7H4zM18 9h2v7h-2zM7 8a5 5 0 0 1 10 0z" fill="currentColor"/><path d="M8.5 4.5 7.5 3M15.5 4.5l1-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-usb" viewBox="0 0 24 24"><path d="M8 2h8v7h1a1 1 0 0 1 1 1v9a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-9a1 1 0 0 1 1-1h1zm2 2v2h1.5V4zm2.5 0v2H14V4z" fill="currentColor"/></symbol>
+</svg>
+
+<script src="vendor/qrcode.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

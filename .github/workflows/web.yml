@@ -1,0 +1,44 @@
+# La web de Mix² (docs/) en GitHub Pages.
+# Se publica con cada cambio en main y, además, cada hora: así la copia de las
+# versiones de MixUp y Mix4Up (docs/data/releases.json) está siempre al día.
+# (La web también las lee en directo de GitHub; esta copia es la de reserva.)
+# MixUp o Mix4Up pueden avisar al publicar una versión con un
+# repository_dispatch de tipo «nueva-version» y la web se refresca al momento.
+name: Web
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 * * * *'
+  repository_dispatch:
+    types: [nueva-version]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.d.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Versiones de MixUp y Mix4Up
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 tools/releases.py docs/data/releases.json
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: d
+        uses: actions/deploy-pages@v4
