@@ -118,24 +118,27 @@ const slim = r => ({
 });
 let snapshot = null;
 async function fromSnapshot() {
-  if (!snapshot) snapshot = fetch('data/releases.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null);
+  if (!snapshot) snapshot = fetch('data/releases.json?_=' + Date.now(), { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null);
   return snapshot;
 }
 async function load(id) {
   const app = APPS[id], key = 'mix2:' + id;
-  const c = store.get(key);
-  if (c && Date.now() - c.t < 10 * 60 * 1000) return c.list;
-  let list = null;
+  const newest = l => (l && l.length ? Math.max(...l.map(r => +new Date(r.published_at))) : 0);
+  const sort = l => l.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+  // siempre se pregunta a GitHub, sin caché: así una versión recién publicada sale al momento
   try {
-    const r = await fetch(`https://api.github.com/repos/${app.repo}/releases?per_page=100`, { headers: { Accept: 'application/vnd.github+json' } });
-    if (r.ok) list = (await r.json()).filter(x => !x.draft && !x.prerelease && /^v\d/.test(x.tag_name)).map(slim);
+    const r = await fetch(`https://api.github.com/repos/${app.repo}/releases?per_page=100&_=${Date.now()}`, { cache: 'no-store', headers: { Accept: 'application/vnd.github+json' } });
+    if (r.ok) {
+      const list = (await r.json()).filter(x => !x.draft && !x.prerelease && /^v\d/.test(x.tag_name)).map(slim);
+      store.set(key, { t: Date.now(), list });
+      return sort(list);
+    }
   } catch {}
-  if (!list) {
-    const s = await fromSnapshot();
-    list = s && s.apps && s.apps[id] ? s.apps[id] : null;
-  } else store.set(key, { t: Date.now(), list });
-  if (!list) return null;
-  return list.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+  // si GitHub no contesta, la copia más nueva que haya: la del navegador o la de la web
+  const c = store.get(key), s = await fromSnapshot();
+  const a = c && c.list, b = s && s.apps && s.apps[id];
+  const best = newest(a) >= newest(b) ? a : b;
+  return best && best.length ? sort(best) : null;
 }
 
 const asset = (r, re) => (r.assets || []).find(a => re.test(a.name));
