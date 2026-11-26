@@ -11,7 +11,7 @@ const APPS = {
     // del 1.x se llamaba ZenTor
     label: tag => (/^v?1\./.test(tag) ? 'ZenTor ' : 'MixUp ') + tag.replace(/^v/, ''),
     isMain: tag => /^v?[2-9]\d*\./.test(tag),
-    files: { inst: /Instalador.*\.exe$/i, port: /Portable.*\.exe$/i, apk: /\.apk$/i, single: /^(MixUp|ZenTor)\.exe$/i },
+    files: { inst: /Instalador.*\.exe$/i, port: /Portable.*\.exe$/i, apk: /\.apk$/i, mac: /\.dmg$/i, single: /^(MixUp|ZenTor)\.exe$/i },
   },
   mix4up: {
     name: 'Mix4Up', repo: 'luckicla/mix4up', logo: 'img/mix4up.svg',
@@ -153,7 +153,7 @@ function paintApp(id, list) {
   $$(`[data-ver="${id}"]`).forEach(el => { el.textContent = 'v' + v; });
   $$(`[data-verline="${id}"]`).forEach(el => { el.textContent = `Versión ${v} · ${fecha(latest.published_at)} · gratis`; });
   // tamaños de los archivos (los botones siguen bajando la release fija «latest»)
-  for (const kind of ['inst', 'port', 'apk']) {
+  for (const kind of ['inst', 'port', 'apk', 'mac']) {
     const a = fileOf(id, latest, kind);
     if (a) $$(`[data-size="${id}:${kind}"]`).forEach(el => { el.textContent = mb(a.size); });
   }
@@ -162,13 +162,13 @@ function paintApp(id, list) {
   $('#vers-' + id).innerHTML = list.map((r, i) => `<tr>
     <td><b>${esc(app.label(r.tag_name))}</b>${r === latest ? '<span class="latest">Última</span>' : ''}</td>
     <td>${fechaCorta(r.published_at)}</td>
-    <td>${link(fileOf(id, r, 'inst'))}</td><td>${link(fileOf(id, r, 'port'))}</td><td>${link(fileOf(id, r, 'apk'))}</td></tr>`).join('');
+    <td>${link(fileOf(id, r, 'inst'))}</td><td>${link(fileOf(id, r, 'port'))}</td><td>${link(fileOf(id, r, 'apk'))}</td>${id === 'mixup' ? `<td>${link(fileOf(id, r, 'mac'))}</td>` : ''}</tr>`).join('');
 }
 
 function failApp(id) {
   const app = APPS[id];
-  $$(`[data-verline="${id}"]`).forEach(el => { el.textContent = 'Gratis · Windows y Android'; });
-  $('#vers-' + id).innerHTML = `<tr><td colspan="5" class="fine">No he podido cargar las versiones. Míralas en <a href="https://github.com/${app.repo}/releases">GitHub</a>.</td></tr>`;
+  $$(`[data-verline="${id}"]`).forEach(el => { el.textContent = id === 'mixup' ? 'Gratis · Windows, Android y Mac' : 'Gratis · Windows y Android'; });
+  $('#vers-' + id).innerHTML = `<tr><td colspan="${id === 'mixup' ? 6 : 5}" class="fine">No he podido cargar las versiones. Míralas en <a href="https://github.com/${app.repo}/releases">GitHub</a>.</td></tr>`;
 }
 
 let feed = [], filter = 'all', shown = 8;
@@ -180,8 +180,8 @@ function paintFeed() {
   feed.forEach(x => { if (!firstOf[x.id] && APPS[x.id].isMain(x.r.tag_name)) firstOf[x.id] = x.r; });
   log.innerHTML = items.slice(0, shown).map((x, i) => {
     const app = APPS[x.id], r = x.r, first = firstOf[x.id] === r;
-    const files = ['inst', 'port', 'apk'].map(k => [k, fileOf(x.id, r, k)]).filter(([, a]) => a);
-    const names = { inst: 'Windows', port: 'Portable', apk: 'Android' };
+    const files = ['inst', 'port', 'apk', 'mac'].map(k => [k, fileOf(x.id, r, k)]).filter(([, a]) => a);
+    const names = { inst: 'Windows', port: 'Portable', apk: 'Android', mac: 'macOS' };
     const notes = cleanNotes(r.body);
     return `<article class="rel ${x.id}${first ? ' first' : ''}" style="animation-delay:${Math.min(i, 8) * 40}ms">
       <header><img src="${app.logo}" alt=""><b>${esc(app.label(r.tag_name))}</b>${first ? '<span class="tag new">Última</span>' : ''}<time datetime="${esc(r.published_at)}" title="${fecha(r.published_at)}">${hace(r.published_at)}</time></header>

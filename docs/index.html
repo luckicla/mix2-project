@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mix² · MixUp + Mix4Up · tu música y tus vídeos</title>
-<meta name="description" content="Mix² junta a MixUp (reproductor de música con modo DJ) y Mix4Up (YouTube sin Shorts y tus vídeos). Descargas para Windows y Android, novedades y todas las versiones. Gratis y de código abierto.">
+<meta name="description" content="Mix² junta a MixUp (reproductor de música con modo DJ) y Mix4Up (YouTube sin Shorts y tus vídeos). Descargas para Windows, Android y Mac, novedades y todas las versiones. Gratis y de código abierto.">
 <meta property="og:title" content="Mix² · MixUp + Mix4Up">
-<meta property="og:description" content="Dos apps, una familia: tu música mezclada como en una sesión y tu YouTube sin un solo Short. Windows y Android, gratis.">
+<meta property="og:description" content="Dos apps, una familia: tu música mezclada como en una sesión y tu YouTube sin un solo Short. Windows, Android y Mac, gratis.">
 <meta property="og:image" content="https://luckicla.github.io/mix2-project/img/mixup.png">
 <meta name="theme-color" content="#0a0a0d">
 <link rel="icon" href="img/mix2.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 <div class="bgfx" aria-hidden="true"></div>
@@ -42,7 +42,7 @@
     <h1 class="title" aria-label="Mix al cuadrado">
       <span class="ransom" aria-hidden="true"><i>M</i><i>I</i><i>X</i></span><span class="sq" aria-hidden="true">2</span>
     </h1>
-    <p class="lead"><b class="hl-acid">MixUp</b> pone tu música a sonar como en una sesión de DJ. <b class="hl-pink">Mix4Up</b> te da tu YouTube sin un solo Short y todos tus vídeos. Las dos para <b>Windows</b> y <b>Android</b>, sin anuncios y se actualizan solas.</p>
+    <p class="lead"><b class="hl-acid">MixUp</b> pone tu música a sonar como en una sesión de DJ. <b class="hl-pink">Mix4Up</b> te da tu YouTube sin un solo Short y todos tus vídeos. Las dos para <b>Windows</b> y <b>Android</b> (y MixUp también para <b>Mac</b>), sin anuncios y se actualizan solas.</p>
     <div class="hero-dl">
       <a class="btn big acid" href="#mixup">
         <img src="img/mixup.png" alt="" width="34" height="34">
@@ -53,7 +53,7 @@
         <span>Mix4Up<small>Vídeos · <em data-ver="mix4up">última versión</em></small></span>
       </a>
     </div>
-    <p class="mono-note">Windows 10 y 11 · Android 7 o más nuevo · código abierto</p>
+    <p class="mono-note">Windows 10 y 11 · Android 7 o más nuevo · macOS 11 o más nuevo (MixUp) · código abierto</p>
   </div>
 
   <div class="collage" aria-hidden="true">
@@ -80,7 +80,7 @@
 <!-- cinta de versiones en directo -->
 <div class="ticker" aria-label="Últimas versiones">
   <div class="ticker-in" id="ticker">
-    <span>MixUp <b data-ver="mixup">—</b></span><span>Mix4Up <b data-ver="mix4up">—</b></span><span>Windows + Android</span><span>Se actualizan solas</span><span>Sin anuncios</span><span>Código abierto</span>
+    <span>MixUp <b data-ver="mixup">—</b></span><span>Mix4Up <b data-ver="mix4up">—</b></span><span>Windows + Android + Mac</span><span>Se actualizan solas</span><span>Sin anuncios</span><span>Código abierto</span>
   </div>
 </div>
 
@@ -112,7 +112,7 @@
   <div class="stats" id="stats">
     <div class="stat"><b data-stat="versions">—</b><span>versiones publicadas</span></div>
     <div class="stat"><b data-stat="downloads">—</b><span>descargas en GitHub</span></div>
-    <div class="stat"><b>2</b><span>sistemas: Windows y Android</span></div>
+    <div class="stat"><b>3</b><span>sistemas: Windows, Android y Mac</span></div>
     <div class="stat"><b data-stat="last">—</b><span>última actualización</span></div>
   </div>
 </section>
@@ -155,6 +155,7 @@
       <a class="btn acid" data-dl="mixup:inst" href="https://github.com/luckicla/zentor/releases/download/pc-latest/MixUp-Instalador.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-win"/></svg>Windows<small data-size="mixup:inst"></small></a>
       <a class="btn pink" data-dl="mixup:apk" href="https://github.com/luckicla/zentor/releases/download/android-latest/MixUp.apk"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-android"/></svg>Android<small data-size="mixup:apk"></small></a>
       <a class="btn ghost" data-dl="mixup:port" href="https://github.com/luckicla/zentor/releases/download/pc-latest/MixUp-Portable.exe">Portable (USB)<small data-size="mixup:port"></small></a>
+      <a class="btn ghost" data-dl="mixup:mac" href="https://github.com/luckicla/zentor/releases/download/mac-latest/MixUp-macOS.dmg"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mac"/></svg>Mac<small data-size="mixup:mac"></small></a>
     </div>
     <div class="getbar-links">
       <a href="https://luckicla.github.io/zentor/">Web de MixUp ↗</a>
@@ -245,6 +246,7 @@
         <tr><td>Archivos tuyos</td><td>mp3, m4a, flac, ogg, opus, wav</td><td>MP4, MKV, WebM, MOV, AVI…</td></tr>
         <tr><td>Windows (instalador y portable)</td><td class="y">Sí</td><td class="y">Sí</td></tr>
         <tr><td>Android (APK)</td><td class="y">Sí</td><td class="y">Sí</td></tr>
+        <tr><td>Mac (macOS 11 o más nuevo)</td><td class="y">Sí</td><td class="n">Aún no</td></tr>
         <tr><td>Móvil ↔ PC por WiFi</td><td class="y">Sí</td><td class="y">Sí</td></tr>
         <tr><td>Se actualiza sola</td><td class="y">Sí</td><td class="y">Sí</td></tr>
         <tr><td>Anuncios o cuentas propias</td><td class="n">No</td><td class="n">No</td></tr>
@@ -265,7 +267,7 @@
   </div>
 
   <div class="pane" id="pane-mixup" role="tabpanel" aria-labelledby="tab-mixup" data-app="mixup">
-    <div class="dlcards">
+    <div class="dlcards four">
       <a class="dlc" data-dl="mixup:inst" href="https://github.com/luckicla/zentor/releases/download/pc-latest/MixUp-Instalador.exe">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-win"/></svg>
         <b>Windows · instalador</b><span>Se instala como una app más (menú Inicio y escritorio) y se actualiza sola.</span>
@@ -275,6 +277,11 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-usb"/></svg>
         <b>Windows · portable</b><span>Sin instalar. En un USB, la música y los ajustes van en el propio USB.</span>
         <em class="mono">MixUp-Portable.exe <small data-size="mixup:port"></small></em>
+      </a>
+      <a class="dlc" data-dl="mixup:mac" href="https://github.com/luckicla/zentor/releases/download/mac-latest/MixUp-macOS.dmg">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mac"/></svg>
+        <b>Mac · .dmg</b><span>Apple Silicon e Intel, macOS 11 o más nuevo. Para que se actualice sola, muévela a Aplicaciones.</span>
+        <em class="mono">MixUp-macOS.dmg <small data-size="mixup:mac"></small></em>
       </a>
       <div class="dlc qrc">
         <div class="qr" id="qr-mixup"></div>
@@ -286,6 +293,7 @@
       <li><b>Abre el instalador</b>. Si sale «Windows protegió su PC», pulsa <i>Más información › Ejecutar de todas formas</i>.</li>
       <li><b>Tu música aparece sola</b>: lee tu carpeta Música. Para añadir más, arrastra canciones a la ventana.</li>
       <li><b>Dale al play</b> y, si te apetece, al disco de arriba: el modo DJ mezcla las siguientes él solo.</li>
+      <li><b>¿En Mac?</b> Abre el .dmg (o el <a href="https://github.com/luckicla/zentor/releases/download/mac-latest/MixUp-macOS.zip">.zip</a>) y arrastra MixUp a Aplicaciones (así se actualiza sola). La primera vez, clic derecho en la app › <i>Abrir</i>. En macOS 15 o más nuevo: <i>Ajustes del Sistema › Privacidad y seguridad › Abrir igualmente</i>.</li>
     </ol>
   </div>
 
@@ -320,7 +328,23 @@
 <!-- ============ NOVEDADES ============ -->
 <section id="novedades" class="sec">
   <h2 class="label">Novedades</h2>
-  <p class="intro">Salen solas de GitHub: en cuanto se publica una versión de cualquiera de las dos, aparece aquí.</p>
+  <p class="intro">Las versiones salen solas de GitHub: en cuanto se publica una de cualquiera de las dos, aparece aquí. Antes, lo grande que ha traído MixUp en las últimas versiones.</p>
+
+  <div class="news" aria-labelledby="news-h">
+    <p class="kicker"><span class="dot"></span> MixUp 2.0.2x · gran actualización</p>
+    <h3 id="news-h" class="news-h">Ahora MixUp es <em>tuyo</em>: activas solo lo que usas</h3>
+    <div class="feat">
+      <div class="fc"><span class="ic">✚</span><h3>Plugins</h3><p>Modo DJ, In Cover Actions, Optimización, Conectar por WiFi, Letras en tiempo real, Temporizador, Compartir, Mejorar sonido, Info de artistas, Canciones repetidas, Mostrar la siguiente, Logo propio y Barra inferior. Cada uno se enciende o se apaga.</p></div>
+      <div class="fc"><span class="ic">⌂</span><h3>Tienda de plugins</h3><p>Temas, estilos y tipografías en <b>Instalados</b> y <b>Explorar</b>. Añade lo que te guste con un toque.</p></div>
+      <div class="fc"><span class="ic">♪</span><h3>Letras en tiempo real</h3><p>Letras sincronizadas con <b>LRCLIB</b>, palabra a palabra, que van al ritmo de la canción.</p></div>
+      <div class="fc"><span class="ic">×2</span><h3>Acciones en la portada</h3><p>Toca la portada para ir a x2, repetir un tramo y más, sin abrir menús.</p></div>
+      <div class="fc"><span class="ic">⚙</span><h3>Ajustes más claros</h3><p>Modo <b>normal</b> o <b>avanzado</b> y ajustes de un toque para lo que más cambias.</p></div>
+      <div class="fc"><span class="ic">✦</span><h3>Estilos nuevos</h3><p><b>Blend</b>, <b>Expressive</b> y <b>Crate</b>, además de volumen y barras de progreso nuevos.</p></div>
+      <div class="fc"><span class="ic">ϟ</span><h3>YouTube mucho más rápido</h3><p>Buscar y empezar a escuchar tarda mucho menos.</p></div>
+      <div class="fc"><span class="ic">☁</span><h3>Sincronización con Google Drive</h3><p><b>Muy pronto</b>: tus ajustes, playlists y Me gusta entre aparatos usando tu propio Drive.</p></div>
+      <div class="fc"><span class="ic">⌘</span><h3>MixUp para Mac</h3><p>Ya está para macOS 11 o más nuevo, Apple Silicon e Intel. <a href="#descargas">Descárgalo</a> (.dmg) y muévelo a Aplicaciones para que se actualice solo.</p></div>
+    </div>
+  </div>
   <div class="chips" role="group" aria-label="Filtrar novedades">
     <button class="chip on" data-f="all" aria-pressed="true">Todas</button>
     <button class="chip" data-f="mixup" aria-pressed="false">MixUp</button>
@@ -339,8 +363,8 @@
     <button role="tab" id="vtab-mix4up" aria-controls="vpane-mix4up" aria-selected="false" data-vtab="mix4up" tabindex="-1"><img src="img/mix4up.svg" alt="" width="20" height="20">Mix4Up</button>
   </div>
   <div class="tablewrap" id="vpane-mixup" role="tabpanel" aria-labelledby="vtab-mixup">
-    <table class="vers"><thead><tr><th>Versión</th><th>Fecha</th><th>Instalador</th><th>Portable</th><th>Android</th></tr></thead>
-    <tbody id="vers-mixup"><tr><td colspan="5" class="fine">Cargando…</td></tr></tbody></table>
+    <table class="vers"><thead><tr><th>Versión</th><th>Fecha</th><th>Instalador</th><th>Portable</th><th>Android</th><th>macOS</th></tr></thead>
+    <tbody id="vers-mixup"><tr><td colspan="6" class="fine">Cargando…</td></tr></tbody></table>
   </div>
   <div class="tablewrap" id="vpane-mix4up" role="tabpanel" aria-labelledby="vtab-mix4up" hidden>
     <table class="vers"><thead><tr><th>Versión</th><th>Fecha</th><th>Instalador</th><th>Portable</th><th>Android</th></tr></thead>
@@ -353,9 +377,9 @@
   <h2 class="label">¿Es seguro? Sí</h2>
   <div class="safe">
     <div class="sc">
-      <h3>¿Por qué avisa Windows o Android?</h3>
+      <h3>¿Por qué avisa Windows, Android o Mac?</h3>
       <p>Porque las apps no están firmadas con un certificado de pago (cuesta cientos de euros al año) ni vienen de una tienda oficial. No es por lo que hacen.</p>
-      <p><b>Windows</b>: <i>Más información › Ejecutar de todas formas</i>.<br><b>Android</b>: <i>Más detalles › Instalar de todas formas</i>.</p>
+      <p><b>Windows</b>: <i>Más información › Ejecutar de todas formas</i>.<br><b>Android</b>: <i>Más detalles › Instalar de todas formas</i>.<br><b>Mac</b>: clic derecho › <i>Abrir</i> (en macOS 15 o más nuevo: <i>Ajustes del Sistema › Privacidad y seguridad › Abrir igualmente</i>).</p>
     </div>
     <div class="sc">
       <h3>Todo a la vista</h3>
@@ -398,10 +422,11 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-win" viewBox="0 0 24 24"><path d="M3 5.5l7.5-1v7H3zM11.5 4.4L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.4z" fill="currentColor"/></symbol>
   <symbol id="i-android" viewBox="0 0 24 24"><path d="M7 9h10v8a1 1 0 0 1-1 1h-1v3h-2v-3h-2v3H9v-3H8a1 1 0 0 1-1-1zM4 9h2v7H4zM18 9h2v7h-2zM7 8a5 5 0 0 1 10 0z" fill="currentColor"/><path d="M8.5 4.5 7.5 3M15.5 4.5l1-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-mac" viewBox="0 0 24 24"><path d="M5 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zm2 0v9h10V5zM2 18h20v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z" fill="currentColor"/></symbol>
   <symbol id="i-usb" viewBox="0 0 24 24"><path d="M8 2h8v7h1a1 1 0 0 1 1 1v9a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-9a1 1 0 0 1 1-1h1zm2 2v2h1.5V4zm2.5 0v2H14V4z" fill="currentColor"/></symbol>
 </svg>
 
 <script src="vendor/qrcode.js"></script>
-<script src="js/site.js?v=2"></script>
+<script src="js/site.js?v=3"></script>
 </body>
 </html>

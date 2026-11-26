@@ -432,3 +432,16 @@ footer small{color:var(--dim2);font:12px var(--f-mono)}
   .cmp td:first-child{font-size:13px}
   .cmp td.y::before,.cmp td.n::before{margin-right:5px}
 }
+
+/* ---------- novedades de MixUp (tarjetas) y descarga para Mac ---------- */
+.dlcards.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1180px){.dlcards.four{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){.dlcards.four{grid-template-columns:1fr}}
+.news{margin:6px 0 46px}
+.news-h{font:400 clamp(28px,4.4vw,44px)/1.05 var(--f-display);text-transform:uppercase;margin:10px 0 24px}
+.news-h em{font-style:normal;background:var(--acid);color:var(--ink);padding:0 10px;display:inline-block;transform:rotate(-2deg)}
+.news .fc{border-radius:4px}
+.news .fc h3{color:var(--acid)}
+.news .fc .ic{background:var(--pink);color:var(--ink);transform:rotate(-4deg);width:auto;min-width:46px;padding:0 8px}
+.news .fc:nth-child(even) .ic{background:var(--acid);transform:rotate(3deg)}
+.news .fc:hover{transform:translate(-3px,-3px) rotate(-.5deg);box-shadow:7px 7px 0 var(--pink);border-color:var(--pink)}
