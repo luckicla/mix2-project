@@ -3,7 +3,7 @@
 La web que junta las dos apps de luckicla en un solo sitio:
 
 - **[MixUp](https://github.com/luckicla/zentor)**: reproductor de música para Windows y Android, con modo DJ, YouTube y Spotify, ecualizador y estética de fanzine.
-- **[Mix4Up](https://github.com/luckicla/mix4up)**: tu YouTube sin Shorts y sin anuncios, y todos tus vídeos, para Windows y Android.
+- **[Mix4Up](https://github.com/luckicla/mix4up)**: tu YouTube sin Shorts y sin anuncios, a la máxima calidad, y todos tus vídeos, para Windows, Mac y Android.
 
 Web: **https://luckicla.github.io/mix2-project/**
 
