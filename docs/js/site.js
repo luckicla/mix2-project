@@ -18,7 +18,7 @@ const APPS = {
     apk: 'https://github.com/luckicla/mix4up/releases/download/mix4up-android-latest/Mix4Up.apk',
     label: tag => 'Mix4Up ' + tag.replace(/^v/, ''),
     isMain: () => true,
-    files: { inst: /Instalador.*\.exe$/i, port: /Portable.*\.exe$/i, apk: /\.apk$/i },
+    files: { inst: /Instalador.*\.exe$/i, port: /Portable.*\.exe$/i, apk: /\.apk$/i, mac: /\.dmg$/i },
   },
 };
 
@@ -162,13 +162,13 @@ function paintApp(id, list) {
   $('#vers-' + id).innerHTML = list.map((r, i) => `<tr>
     <td><b>${esc(app.label(r.tag_name))}</b>${r === latest ? '<span class="latest">Última</span>' : ''}</td>
     <td>${fechaCorta(r.published_at)}</td>
-    <td>${link(fileOf(id, r, 'inst'))}</td><td>${link(fileOf(id, r, 'port'))}</td><td>${link(fileOf(id, r, 'apk'))}</td>${id === 'mixup' ? `<td>${link(fileOf(id, r, 'mac'))}</td>` : ''}</tr>`).join('');
+    <td>${link(fileOf(id, r, 'inst'))}</td><td>${link(fileOf(id, r, 'port'))}</td><td>${link(fileOf(id, r, 'apk'))}</td><td>${link(fileOf(id, r, 'mac'))}</td></tr>`).join('');
 }
 
 function failApp(id) {
   const app = APPS[id];
-  $$(`[data-verline="${id}"]`).forEach(el => { el.textContent = id === 'mixup' ? 'Gratis · Windows, Android y Mac' : 'Gratis · Windows y Android'; });
-  $('#vers-' + id).innerHTML = `<tr><td colspan="${id === 'mixup' ? 6 : 5}" class="fine">No he podido cargar las versiones. Míralas en <a href="https://github.com/${app.repo}/releases">GitHub</a>.</td></tr>`;
+  $$(`[data-verline="${id}"]`).forEach(el => { el.textContent = 'Gratis · Windows, Android y Mac'; });
+  $('#vers-' + id).innerHTML = `<tr><td colspan="6" class="fine">No he podido cargar las versiones. Míralas en <a href="https://github.com/${app.repo}/releases">GitHub</a>.</td></tr>`;
 }
 
 let feed = [], filter = 'all', shown = 8;
